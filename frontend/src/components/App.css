@@ -1,0 +1,166 @@
+/*Global*/
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background-color: white;
+    min-height: 200vh;
+    max-width: 1200px;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+}
+
+/*Ajustables a gusto*/
+.padding {
+    padding: 15px;
+}
+
+.childPaddingS > * {
+    padding: 10px;
+}
+
+.childPaddingM > * {
+    padding: 100px;
+}
+
+.childPaddingL > * {
+    padding: 100px;
+}
+
+.fontWhite {
+    color:white;
+}
+
+.fontRed {
+    color:red;
+}
+
+
+.fontS {
+    font-size: 10px;
+}
+
+.fontM {
+    font-size: 30px;
+}
+
+.fontL {
+    font-size: 40px;
+}
+
+
+
+
+/*Para que Container funcione, NO CAMBIAR*/
+
+.flexH, .equalFlex, .flex25_75, .flex33_66 {
+    display: flex;
+    
+}
+
+/*Evita que los hijos sean mayores que los padres*/
+.flex > * {
+    min-width: 0;
+}
+
+.flexV {
+    display: flex;
+    flex-direction: column;
+}
+
+.equalFlex > * {
+    flex: 1;
+}
+
+.flex25_75 > *:first-child {
+    flex: 1;
+}
+
+.flex25_75 > *:last-child {
+    flex: 3;
+}
+
+.flex33_66 > *:first-child {
+    flex: 1;
+}
+
+.flex33_66 > *:last-child {
+    flex: 2;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.justifyEvenly {
+    justify-content: space-evenly;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+/*Para diseñar los componentes*/
+
+
+
+.border {
+    border: 1px solid black;
+}
+
+.center {
+    text-align: center;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+
+.popUp {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centerButton {
+    display: block;
+    margin: auto;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+/*Secciones del proyecto*/
+.formSection {
+    font-size: 20px;
+}
+
+.mainContainer {
+    font-size: 30px;
+}
+
+.hover:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+

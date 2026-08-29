@@ -1,0 +1,18 @@
+PROYECTO: Portafolio de trabajos en React
+
+DESCRIPCIÓN:
+Aplicación web desarrollada con React que funciona como un portafolio para mostrar evidencias de pequeños proyectos, prácticas y componentes realizados durante el aprendizaje de React.
+
+FUNCIONES PRINCIPALES:
+
+* Mostrar diferentes trabajos y evidencias desarrolladas con React.
+* Navegar entre las diferentes secciones del portafolio.
+* Mostrar componentes sencillos y componentes dinámicos.
+* Utilizar componentes reutilizables.
+* Implementar propiedades (props) para personalizar componentes.
+* Implementar funciones y eventos de clic.
+* Mostrar una ventana emergente de bienvenida.
+* Organizar imágenes y recursos dentro del proyecto.
+
+CREADOR: José Rodrigo Benítez Rivera
+TECNOLOGÍAS UTILIZADAS: React, JavaScript, HTML, CSS, Vite

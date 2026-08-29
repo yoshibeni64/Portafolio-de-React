@@ -1,0 +1,22 @@
+INSTRUCCIONES PARA MONTAR EL PROYECTO
+
+Es necesario tener instalado Node.js y npm.
+
+1. Descargar o clonar el repositorio del proyecto.
+
+2. Abrir una terminal dentro de la carpeta principal del proyecto.
+
+3. Instalar las dependencias necesarias ejecutando:
+
+npm install
+
+4. Iniciar el servidor de desarrollo con:
+
+npm run dev
+
+5. Abrir en el navegador la dirección que aparecerá en la terminal, normalmente:
+
+http://localhost:5173
+
+NOTA:
+El proyecto fue desarrollado utilizando React y Vite.
