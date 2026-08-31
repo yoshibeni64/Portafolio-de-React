@@ -91,15 +91,22 @@ function Tabulador() {
 }
 
 //Acomodador de arreglos
-function ArrayP() {
-    const nombres = ["Ana", "Bety", "Carlos", "Diego", "Elena", "Fer", "Gloria", "Hugo"];
+function ArrayContainer({ question, array, ...props }) {
     return (
         <>
-            <Container width="300px" height="700px" radius="30px" color="#7BE0AD" layoutClasses={"flexV childPaddingS justifyEvenly alignCenter border center"}>
-                {nombres.map((nombre) => {
-                    return <Container width="70%" radius="30px" color={"yellow"} layoutClasses={"border center"} key={nombre}>
-                        {nombre}
-                    </Container>
+            <Container width="300px" radius="30px" color="#7BE0AD" layoutClasses={"flexV childPaddingS justifyEvenly alignCenter border center"}>
+                <Section subtitle={question}/>
+                {array.map((element) => {
+                    return <ClickContainer
+                        width="70%"
+                        radius="30px"
+                        color={"yellow"}
+                        layoutClasses={"border margin center"}
+                        key={element}
+                        clickFunction={() => alert(element)}
+                    >
+                        {element}
+                    </ClickContainer>
                 })}
             </Container>
         </>
@@ -315,7 +322,7 @@ function App9() {
     */
 
 //Pop-up window
-function PopupWindow({ title, subtitle, content }) {
+function PopupWindow({title, subtitle, content }) {
     const [visible, setVisible] = useState(true);
     return (
         <>
@@ -553,25 +560,103 @@ function MainContainer0() {
     )
 }
 
+
+function ImagenDescriptiva(props) {
+    return (
+        <>
+            <Container width="300px" radius="30px" color="#7BE0AD" layoutClasses={"flexV padding equalFlex center"}>
+                <Section
+                    title={props.title}
+                    subtitle={props.subtitle}
+                    content={props.content}
+                />
+                <Image
+                    src={props.src}
+                    alt={props.alt}
+                    width="70%"
+                    radius="30px"
+                />
+            </Container>
+        </>
+    );
+}
+
+function Credencial(props) {
+    return (
+        <>
+            <Container width="500px" radius="0" color="#F2C14E" layoutClasses={"flex33_66 justifyCenter alignCenter childPaddingS"}>
+                <Image src={props.foto} width="150px" height="180px" radius="30px" />
+                <Section
+                    subtitle={`Escuela: ${props.escuela}`}
+                    content={`Nombre: ${props.nombre}\nGrupo: ${props.grupo}\nTutor: ${props.tutor}\nTeléfono: ${props.telefono}\nGeneración: ${props.generacion}`}
+                />
+            </Container>
+        </>
+    )
+}
+
+function EtiquetaEscolar(props) {
+    return (
+        <>
+            <Container width="500px" radius="30px" color="#F2C14E" layoutClasses={"flex33_66 alignCenter childPaddingS"}>
+                <Image src={props.imagen} alt="Paisaje" width="100%" height="auto" radius="30px" />
+                <Section 
+                title={props.materia}
+                content={`Nombre: ${props.nombre}\nGrupo: ${props.grupo}\nMaestr@: ${props.maestro}`}
+                />
+            </Container>
+        </>
+    )
+}
+
+function Separador(props) {
+    return(
+        <>
+            <ImgContainer src={props.imagen} width="800px" height="200px" radius="250px" layoutClasses={"flexH justifyCenter alignCenter"}>
+            <Section content={props.frase} layoutClasses={"fontM"} />
+            </ImgContainer>
+        </>
+    )
+}
+
+
 function MainContainer1() {
     return (
         <>
             <Container layoutClasses={"padding flexV"}>
                 <Section title="Componentes sencillos" />
                 <Section subtitle="1. Etiqueta simple con imagen" />
-                <Container width="300px" radius="30px" color="#7BE0AD" layoutClasses={"flexV padding equalFlex center"}>
-                    <Section title="TEOTIHUACÁN" subtitle="La ciudad de los Dioses"
-                        content="Explora una de las ciudades más impresionantes del México antiguo y maravíllate con sus enormes pirámides, templos y antiguos murales." />
-                    <Image src={teotihuacan} alt="Paisaje" width="70%" radius="30px" />
-                </Container>
 
-                <Section subtitle="2. Etiqueta escolar" />
-                <Container width="500px" radius="30px" color="#F2C14E" layoutClasses={"flex33_66 alignCenter childPaddingS"}>
-                    <Image src={matematicas} alt="Paisaje" width="100%" height="auto" radius="30px" />
-                    <Section title="Matemáticas" subtitle="Alumno: José Rodrigo Benítez Rivera" content="Maestra: Ana Laura Rivera López" />
-                </Container>
+                <ImagenDescriptiva 
+                src={teotihuacan} 
+                alt="Paisaje"
+                title="TEOTIHUACÁN"
+                subtitle="La ciudad de los Dioses"
+                content="Explora una de las ciudades más impresionantes del México antiguo y maravíllate con sus enormes pirámides, templos y antiguos murales."
+                />
 
-                <Section subtitle="3. Reel de 5 imágenes" />
+                <Section subtitle="2. Credencial escolar" />
+
+                <Credencial
+                foto={matematicas}
+                escuela="Escuela Secundaria General N° 117 Gabriela Mistral"
+                nombre="José Rodrigo Benítez Rivera"
+                grupo="1°E"
+                tutor="Ana Laura Rivera López"
+                telefono="55-1234-5678"
+                generacion="2012-2015"
+                />
+
+                <Section subtitle="3. Etiqueta escolar" />
+                <EtiquetaEscolar
+                imagen={matematicas}
+                materia="Matemáticas"
+                nombre="José Rodrigo Benítez Rivera"
+                grupo="1°E"
+                maestro="Julio Profe"
+                />
+
+                <Section subtitle="4. Reel de 5 imágenes" />
                 <Container width="100%" radius="0" color="#7BE0AD" layoutClasses={"equalFlex childPaddingS"}>
                     <Image src={banana} alt="Banana" width="100%" height="100%" radius="0" />
                     <Image src={fresa} alt="Fresa" width="100%" height="100%" radius="0" />
@@ -580,10 +665,13 @@ function MainContainer1() {
                     <Image src={uva} alt="Uva" width="100%" height="100%" radius="0" />
                 </Container>
 
-                <Section subtitle="4. Separador de libros" />
-                <ImgContainer src={fantasy} width="800px" height="200px" radius="250px" layoutClasses={"flexH justifyCenter alignCenter childPaddingS"}>
-                    <Section content="Cada línea de código te acerca a tu meta" layoutClasses={"fontM"} />
-                </ImgContainer>
+                <Section subtitle="5. Separador de libros" />
+
+                <Separador 
+                    imagen={fantasy}
+                    frase="Cada línea de código te acerca a tu meta"
+                />
+
                 <Section title="Más componentes serán agregado con el tiempo" />
             </Container>
         </>
@@ -602,8 +690,10 @@ function MainContainer2() {
                     <Image src={pug} alt="Paisaje" width="70%" radius="30px" />
                 </ToggleContent>
 
-                <Section subtitle="2. Mostrador de arreglo" />
-                <ArrayP />
+                <Section subtitle="2. Contenedor con arreglo" />
+                <ArrayContainer 
+                question="Selecciona una opción"
+                array={["Ana", "Brenda", "Carlos", "Diana"]} />
 
                 <Section subtitle="3. Tabulador de funciones lineales" />
                 <Tabulador />

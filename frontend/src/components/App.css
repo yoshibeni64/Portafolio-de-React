@@ -3,6 +3,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+span {
+    white-space: pre-line;
+}
+
 body {
     margin: 0 auto;
     background-color: white;
@@ -35,6 +39,22 @@ td {
 
 .childPaddingL > * {
     padding: 100px;
+}
+
+.margin {
+    margin: 10px;
+}
+
+.childMarginS > * {
+    margin: 10px;
+}
+
+.childMarginM > * {
+    margin: 50px;
+}
+
+.childMarginL > * {
+    margin: 100px;
 }
 
 .fontWhite {
@@ -160,7 +180,7 @@ td {
 }
 
 .hover:hover {
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
 }
 

@@ -9,8 +9,8 @@ function Section({width, height, title, subtitle, content, layoutClasses}) {
         style={{width: width, height: height}}
         >
             <h2>{title}</h2>
-            <b>{subtitle}</b>
-            <p>{content}</p>
+            <h3>{subtitle}</h3>
+            <span>{content}</span>
         </div>
         </>
     )
@@ -33,7 +33,7 @@ function Container({width, height, radius, color, children, layoutClasses}) {
 function ClickContainer({width, height, radius, color, children, layoutClasses, clickFunction, state}) {
     return (
         <div
-            className={`flex ${layoutClasses}`}
+            className={`flex hover ${layoutClasses}`}
             style={{width: width, height:height, borderRadius: radius, backgroundColor: color}}
             onClick={() => clickFunction(state)}
         >
